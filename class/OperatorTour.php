@@ -1,11 +1,12 @@
 <?php
 
-class Review
+class OperatorTour
 {
   protected $id,
-            $message,
-            $price,
-            $idtouroperator;
+            $name,
+            $grade,
+            $isPremium,
+            $link;
   
   public function __construct(array $donnees)
     {
@@ -33,18 +34,23 @@ class Review
     {
       return $this->id;
     }
-  public function getMessage()
+  public function getName()
     {
-      return $this->message;
+      return $this->name;
     }
-  public function getIdTourOperator()
+  public function getGrade()
     {
-      return $this->idtouroperator;
+      return $this->grade;
     }
-  public function getPrice()
+  public function getIsPremium()
     {
-      return $this->price;
-    }  
+      return $this->isPremium;
+    } 
+  public function getLink()
+    {
+      return $this->link;
+    }
+  
   // SETTERS //
 
   
@@ -58,19 +64,29 @@ class Review
       }
     }
   
-  public function setMessage($message)
+  public function setName($name)
     {
-      if(is_string($message))
+      if(is_string($name))
       {
-        $this->message = $message;
+        $this->name = $name;
       }
     }
-  public function setPrice($price)
+  public function setGrade($grade)
     {
-        $this->price = $price;
+        $this->grade = $grade;
     }
-  public function setIdTourOperator($idtouroperator)
+    
+  public function setLink($link)
     {
-        $this->idtouroperator = $idtouroperator;
+        $this->link = $link;
     }
+
+  public function setIsPremium($isPremium)
+    {
+
+        $this->isPremium = $isPremium;
+
+    }
+
+
 }

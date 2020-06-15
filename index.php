@@ -1,6 +1,18 @@
-<?php
-define('ROOT', __DIR__ . '/');
 
+
+
+<?php
+
+  // connexion à la DB
+  require './controler/DB-connexion.php';
+// Autoloader.
+  include 'controler/autoloader.php';
+
+  // Code class
+
+
+
+define('ROOT', __DIR__ . '/');
 
 
 

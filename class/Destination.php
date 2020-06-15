@@ -1,9 +1,9 @@
 <?php
 
-class Review
+class Destination
 {
   protected $id,
-            $message,
+            $location,
             $price,
             $idtouroperator;
   
@@ -33,9 +33,9 @@ class Review
     {
       return $this->id;
     }
-  public function getMessage()
+  public function getLocation()
     {
-      return $this->message;
+      return $this->location;
     }
   public function getIdTourOperator()
     {
@@ -58,11 +58,11 @@ class Review
       }
     }
   
-  public function setMessage($message)
+  public function setLocation($location)
     {
-      if(is_string($message))
+      if(is_string($location))
       {
-        $this->message = $message;
+        $this->location = $location;
       }
     }
   public function setPrice($price)

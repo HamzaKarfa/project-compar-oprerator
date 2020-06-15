@@ -12,20 +12,18 @@
     
 
 
-            <?php
-            if (isset($_GET['admin'])) {
+<?php
 
-                include "admin-page.php";
 
-            }elseif (isset($_POST['operatorTour'])) {
+$destination = new Manager($db);
 
-                include "operator-tour.php";
+echo '<br>';
 
-            }else{
+    $test =$destination->getOperatorTour(1);
+    
+   echo $test->getName();
 
-                include "destination-list.php";
 
-            }
 ?>
 
 
