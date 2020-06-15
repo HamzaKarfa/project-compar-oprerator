@@ -8,11 +8,7 @@
 // Autoloader.
   include 'controler/autoloader.php';
 
-  // Code class
 
-
-
-define('ROOT', __DIR__ . '/');
 
 
 

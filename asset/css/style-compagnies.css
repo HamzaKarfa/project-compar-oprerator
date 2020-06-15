@@ -1,0 +1,19 @@
+
+.img-home {
+    max-width: 100%;
+    height: auto;
+}
+
+.text-compagnies {
+    text-align: center;
+    margin-top: 80px;
+    color: rgb(68, 68, 68);
+    font-family: 'Comfortaa', cursive;
+}
+
+.container-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    margin: 30px;
+}
