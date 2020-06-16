@@ -25,3 +25,33 @@
     color: rgb(68, 68, 68);
     font-family: 'Comfortaa', cursive;
 }
+
+.premium-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    padding: 60px;
+    margin: 30px;
+    border: double 2px rgba(128, 128, 128, 0.664);
+    background-color: rgba(187, 187, 187, 0.432);
+    border-radius: 4px;
+}
+
+.covid {
+    display: flex;
+    justify-content: center;
+    color: rgb(68, 68, 68);
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.covid19 {
+    float: left;
+}
+
+.guide {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}

@@ -11,6 +11,21 @@
         <p>Trouvez votre bonheur parmis nos annonces</p>
     </div>
 
+    <div class="covid">
+        <p>
+            <img class="covid19" src="./asset/img/covid.png">
+            COVID-19
+            <br>
+            Guide de voyage
+            <br>
+            Tout ce que vous devez savoir pour
+            <br>
+            prendre les meilleures décisions de voyage.</p>
+    </div>
+    <div class="guide">
+        <a class="btn btn-primary" href="" role="button">Voir le guide</a>
+    </div>
+
     <div class="nav-selection">
         <div class="selection">
             <div class="dropdown">
@@ -25,19 +40,22 @@
         </div>
     </div>
 
+    <div class="premium-cards">
+
     <?php  for ($i=0; $i <3; $i++):?>
 
         <div class="card text-center" style="width: 20rem;">
             <div class="col-12">
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title"></h5>
+                    <h5 class="card-title">⭐ Premium</h5>
                     <p class="card-text">Some quick example text to build.</p>
                     <a href="" class="btn btn-primary">Go somewhere</a>  
                 </div>
             </div>
         </div>
         <?php endfor ;?>
+    </div>
 
     <div class="destinations-cards">
 
