@@ -9,9 +9,6 @@
             <input type="text">
             <button type="submit">Connexion</button>
             <br>
-            <!-- <label for=""> Mot de passe</label>
-            <input type="password"> -->
-
         </form>
     </div>
     <div class="col-6 text-center">
@@ -23,9 +20,6 @@
             <input type="text" name="operatorTour">
             <button type="submit">Connexion</button>
             <br>
-            <!-- <label for=""> Mot de passe</label>
-            <input type="password"> -->
-
         </form>
     </div>
 </div>

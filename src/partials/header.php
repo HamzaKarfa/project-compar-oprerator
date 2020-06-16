@@ -9,7 +9,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item active">            
                             <form method="GET"  >
-                                <button class="btn btn-color" value="" name="Compagnies">Nos compagnies</button>
+                                <button class="btn btn-color" value="Compagnies" name="Compagnies">Nos compagnies</button>
                              </form> <span class="sr-only">(current)</span>
                     </li>
                     <li class="nav-item active">

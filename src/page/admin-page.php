@@ -1,5 +1,6 @@
 <?php include "src/partials/meta-link.php" ?>
 <?php include "src/partials/header-admin.php" ?>
+
 <main class='container d-flex justify-content-center flex-column pt-5 border-0 '>
 
 <?php
@@ -23,7 +24,6 @@ $operatorTour = new Manager($db);
         $operatorTour->addOperatorTour($compagnie);
     }
 ?> 
-    <?php if (isset($_POST['compagnies'])) {?>
     <div class="compagnies-content text-center">
         
         <h3>Ajouter une compagnie :</h3>
@@ -53,33 +53,22 @@ $operatorTour = new Manager($db);
                     <p class="card-text">Some quick example text to build.</p>
                     <a href="<?=$operatorTourList[$i]->getLink()?>" class="btn btn-primary">Go somewhere</a>  
                     <form action="" method="post">
-                        <input type="text" name="delete" value="<?= $operatorTourList[$i]->getId() ?>"  style="display: block;">
-                        <button type="submit" class="btn btn-danger">Supprimer cette Compagnie</button>
+                        <input type="text" name="delete" value="<?= $operatorTourList[$i]->getId() ?>"  style="display: none;">
+                        <button type="submit" class="btn btn-danger">Supprimer</button>
                     </form>
 
                 </div>
             </div>
         <?php }?>
         
-                        <?php if (isset($_POST['delete'])){
-                            var_dump($operatorTour->deleteOperatorTour($_POST['delete'])); 
-                        }?>
+
     </div>
-    <?php    }elseif (isset($_POST['destination'])) {?>
-        <div class="destination-content">
-            <h3>Ajouter une destination :</h3>
-            <form action="">
-                <select name="" id="">
-                    <option value="">option1</option>
-                    <option value="">option2</option>
-                </select>
-            </form>
-        </div>
-    <?php    } else {?>
-        
-        Page Administrateur !
-        
-    <?php } ?>
+    <?php 
+    
+    if (isset($_POST['delete'])){
+        echo $_POST['delete'];
+        $operatorTour->deleteOperatorTour($_POST['delete']); 
+    }?>
 </main>
 <?php include "src/partials/footer.php" ?>
 <?php include "controler/debug-info.php"?>

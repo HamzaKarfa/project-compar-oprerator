@@ -8,7 +8,7 @@
     <?php
         if (isset($_GET['Destination'])) {
             include './src/page/destination-list.php';
-        }else if (isset($_GET['Companies'])) {
+        }else if (isset($_GET['Compagnies'])) {
             include './src/page/compagnies.php';
         }else if (isset($_GET['connexion'])) {
             include './src/page/connexion.php';

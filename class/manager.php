@@ -81,7 +81,7 @@ class Manager
     {
     $q = $this->db->query('SELECT id, name, grade, link, is_premium FROM tour_operators WHERE id = '.$operatorTourInfo);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
-      var_dump($donnees);
+
         return new OperatorTour($donnees);
   
     }
@@ -102,11 +102,9 @@ class Manager
     if (is_int($destinationInfo))
      
     {
-      $q = $this->db->query('SELECT id, location, price, id_tour_operator FROM destinations WHERE id = '.$destinationInfo);
+      $q = $this->db->query('SELECT id, location, price, id_tour_operator FROM destinations WHERE id_tour_operator = '.$destinationInfo);
       $donnees = $q->fetch(PDO::FETCH_ASSOC);
-      var_dump($donnees);
         return new Destination($donnees);
-        
 
     }
     else
@@ -145,8 +143,8 @@ class Manager
 
     $destinationList = [];
 
-    $q = $this->db->prepare('SELECT id, location, price, id_tour_operator FROM destinations WHERE location <> :location ORDER BY id_tour_operator');
-    $q->execute([':location' => $location]);
+    $q = $this->db->prepare('SELECT * FROM destinations WHERE id_tour_operator = :id_tour_operator');
+    $q->execute([':id_tour_operator' => $location]);
     $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
     for ($i=0; $i <count($donnees) ; $i++) { 
         array_push ($destinationList, new Destination($donnees[$i]));
