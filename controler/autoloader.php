@@ -5,6 +5,4 @@ function chargerClasse($classname)
 }
 
 spl_autoload_register('chargerClasse');
-
-session_start();
 ?>

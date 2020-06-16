@@ -8,22 +8,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="./src/page/compagnies.php">
-                            <form method="GET" class="newsletter__form" >
-                                <button class="btn btn-color" value="" name="Companies">Nos compagnies</button>
+                        <a class="nav-link" href="">
+                            <form method="Post" class="" >
+                                <button class="btn btn-color" value="" name="compagnies">Nos compagnies</button>
                              </form> <span class="sr-only">(current)</span>
                         </a>
                     </li>
                     
                     <li class="nav-item active">
-                        <a class="nav-link" href="./src/page/compagnies.php">
-                            <form method="GET" class="newsletter__form" >
-                                <button class="btn btn-color" value="" name="Destination">Nos destinations</button>
+                        <a class="nav-link" href="">
+                            <form method="Post" class="" >
+                                <button class="btn btn-color" value="" name="destination">Nos destinations</button>
                              </form> <span class="sr-only">(current)</span>
                         </a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Les mieux notés <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>

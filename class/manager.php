@@ -19,7 +19,7 @@ class Manager
   public function addOperatorTour($operatorTour)
   {
     $q = $this->db->prepare('INSERT INTO tour_operators(name , grade, link, is_premium ) VALUES(:name , :grade , :link, :is_premium)');
-    $q->bindValue(':nom', $operatorTour->getNom());
+    $q->bindValue(':name', $operatorTour->getName());
     $q->bindValue(':grade', $operatorTour->getGrade());
     $q->bindValue(':link', $operatorTour->getLink());
     $q->bindValue(':is_premium', $operatorTour->getIsPremium());
@@ -46,10 +46,13 @@ class Manager
   }
 
 // --------------- COUNT ------------------//
-  public function count()
+  public function countOperator()
   {
 //TOUR OPERATOR
     return $this->db->query('SELECT COUNT(*) FROM tour_operators')->fetchColumn();
+  }  
+  public function countDestination()
+  {
 //DESTINATION
     return $this->db->query('SELECT COUNT(*) FROM destinations')->fetchColumn();
   }
@@ -58,14 +61,14 @@ class Manager
 
 //TOUR OPERATOR
 
-  public function deleteOperatorTour($operatorTour)
+  public function deleteOperatorTour($operatorTourId)
   {
-    $this->db->exec('DELETE FROM personnages WHERE id = '.$operatorTour->id());
+    $this->db->exec('DELETE FROM tour_operators WHERE id = '.$operatorTourId);
   }
 //DESTINATION
-  public function deleteDestination($destination)
+  public function deleteDestination($destinationId)
   {
-    $this->db->exec('DELETE FROM personnages WHERE id = '.$destination->id());
+    $this->db->exec('DELETE FROM destinations WHERE id = '.$destinationId);
   }
 
 
@@ -121,18 +124,18 @@ class Manager
 
 // --------------- SELECT LIST ------------------//
 //TOUR OPERATOR
-  public function getListOperatorTour($name)
+  public function getListOperatorTour()
   {
     
     $operatorTour = [];
 
-    $q = $this->db->prepare('SELECT id, name, grade, link, is_premium FROM tour_operators WHERE name <> :name ORDER BY name');
-    $q->execute([':name' => $name]);
+    $q = $this->db->prepare('SELECT id, name, grade, link, is_premium FROM tour_operators  ORDER BY name');
+    $q->execute();
     $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
-
-    array_push ($operatorTour, new OperatorTour($donnees));
-
-
+    for ($i=0; $i <count($donnees) ; $i++) { 
+        array_push ($operatorTour, new OperatorTour($donnees[$i]));
+    }
+    
     return $operatorTour;
   }
 
@@ -145,10 +148,12 @@ class Manager
     $q = $this->db->prepare('SELECT id, location, price, id_tour_operator FROM destinations WHERE location <> :location ORDER BY id_tour_operator');
     $q->execute([':location' => $location]);
     $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
-    
-    array_push ($destinationList, new OperatorTour($donnees));
+    for ($i=0; $i <count($donnees) ; $i++) { 
+        array_push ($destinationList, new Destination($donnees[$i]));
+    }
     
     return $destinationList;
+
 
   }
 
