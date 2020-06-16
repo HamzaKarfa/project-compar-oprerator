@@ -81,7 +81,7 @@ class Manager
     {
     $q = $this->db->query('SELECT id, name, grade, link, is_premium FROM tour_operators WHERE id = '.$operatorTourInfo);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
-
+      var_dump($donnees);
         return new OperatorTour($donnees);
   
     }

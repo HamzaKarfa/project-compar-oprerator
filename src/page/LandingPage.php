@@ -4,7 +4,7 @@
     Trouvez votre coin de paradis avec
     <br>
     <br>
-    <span class="easy">EasyTrip</span> 
+    <img class="logo" src="./asset/img/logo.png">
 </h1>
 
 </div>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="redirection">
-<button type="button" class="btn btn-primary btn-lg">Comparez tous les voyages</button>
+<a class="btn btn-primary" href="?Destination=" role="button">Comparez tous les voyages</a>
 </div>
 
 <div class="row">

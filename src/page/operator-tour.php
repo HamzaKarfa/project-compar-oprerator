@@ -1,8 +1,13 @@
+<div class="container">
+<?php
 
-<?php include "src/partials/header.php" ?>
-<main class='container d-flex justify-content-center flex-column pt-5 border-0 '>
-<p>
-    liste des tour opérateur
-</p>
-</main>
-<?php include "src/partials/footer.php" ?>
+    $tourOperator =  $_GET['operatorTour'];
+    echo $tourOperator;
+    
+    $operatorTour = new Manager($db);
+     echo '<br>';
+         $test  = $operatorTour->getOperatorTour($tourOperator);
+    var_dump($test);
+    echo $test->getIsPremium();
+?>
+</div>

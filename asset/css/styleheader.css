@@ -4,6 +4,7 @@
     background-color: rgb(187, 187, 187);
     display: flex;
     justify-content: center;
+    align-items: center;
     box-shadow: 0 0 10px 0 rgb(117, 117, 117);
 }
 
@@ -11,17 +12,30 @@
     background-color: rgb(187, 187, 187);
 }
 
-.navbar-brand {
+a.navbar-brand {
     font-size: 18px;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Comfortaa', cursive;
+    color: white;
+    text-shadow: rgba(107, 107, 107, 0.514) 1px 0 10px;
 }
 
 a.nav-link {
+    font-family: 'Comfortaa', cursive;
+    margin: 0px 45px 0px 45px;
+}
+
+button.btn.btn-color {
     font-size: 18px;
-    text-decoration: none;
     font-weight: bold;
     font-family: 'Comfortaa', cursive;
-    margin: 15px 45px 15px 45px;
+    color: white;
+    text-shadow: rgba(107, 107, 107, 0.514) 1px 0 10px;
+}
+
+.nav-item.active {
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
 }

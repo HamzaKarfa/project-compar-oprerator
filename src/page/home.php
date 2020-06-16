@@ -8,8 +8,12 @@
     <?php
         if (isset($_GET['Destination'])) {
             include './src/page/destination-list.php';
-        }elseif (isset($_GET['Companies'])) {
+        }else if (isset($_GET['Companies'])) {
             include './src/page/compagnies.php';
+        }else if (isset($_GET['connexion'])) {
+            include './src/page/connexion.php';
+        }else if (isset($_GET['operatorTour'])) {
+            include './src/page/operator-tour.php';
         }else{
             include './src/page/LandingPage.php';
         }  
