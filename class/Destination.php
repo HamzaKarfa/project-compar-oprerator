@@ -16,12 +16,12 @@ class Destination
     {
       foreach ($donnees as $key => $value)
       {
+        
         $method = 'set'.ucfirst($key);
-      
         if(method_exists($this, $method))
         {
           $this->$method($value);
-        }
+      }
       }
     }
   
@@ -69,8 +69,9 @@ class Destination
     {
         $this->price = $price;
     }
-  public function setIdTourOperator($idtouroperator)
+  public function setId_tour_operator($idtouroperator)
     {
+
         $this->idtouroperator = $idtouroperator;
     }
 }

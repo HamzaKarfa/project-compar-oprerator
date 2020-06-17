@@ -12,7 +12,7 @@
 
         $addDestination = new Destination([  "location" => $_POST['destinationName'], 
                                     "price" => $_POST['destinationPrice'],
-                                    "idtouroperator"=> $test->getId() ]);
+                                    "id_tour_operator"=> $test->getId() ]);
                                     var_dump($addDestination);
         $operatorTour->addDestination($addDestination);
     }
@@ -24,7 +24,7 @@
             <label for="destinationName">Location : </label>
             <input type="text" name="destinationName" id="destinationName" placeholder="Nom de la destination"><br> 
             <label for="destinationPrice">Prix : </label>
-            <input type="number" name="destinationPrice" id="destinationPrice" placeholder="Lien vers l'operateur"> <br>
+            <input type="number" name="destinationPrice" id="destinationPrice" placeholder="Prix de la destination"> <br>
             <button type="submit">Ajouter</button>
         </form>
 

@@ -1,8 +1,17 @@
 <?php
 
  $destination = new Manager($db);
- echo '<br>';
-     $test =$destination->getOperatorTour(1);
+
+
+//  for ($i=1; $i <$destination->countDestination() ; $i++) { 
+    
+//     $test = $destination->getListDestination($i);
+
+//     for ($j=0; $j < count($test) ; $j++) { 
+//         var_dump($test[$j]->getLocation());
+//     }
+//     echo'<br>';
+//  }
 
 ?>
 
@@ -42,8 +51,8 @@
 
     <div class="premium-cards">
 
-    <?php  for ($i=0; $i <3; $i++):?>
-
+    <?php  for ($i=0; $i <3; $i++){?>
+        
         <div class="card text-center" style="width: 20rem;">
             <div class="col-12">
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
@@ -54,22 +63,28 @@
                 </div>
             </div>
         </div>
-        <?php endfor ;?>
+    <?php }?>
     </div>
 
     <div class="destinations-cards">
 
-    <?php  for ($i=0; $i <12; $i++):?>
-
+    <?php for ($i=0; $i <$destination->countDestination() ; $i++) { 
+    
+        $destinations = $destination->getListDestination();
+        
+        $operator= $destination->getOperatorTour(intval($destinations[$i]->getIdTourOperator()))
+    ?>
+ 
         <div class="card text-center" style="width: 20rem;">
             <div class="col-12">
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text">Some quick example text to build.</p>
-                    <a href="" class="btn btn-primary">Go somewhere</a>  
+                    <h5 class="card-title"><?=$destinations[$i]->getLocation()?></h5>
+                    <p class="card-text"><?=$destinations[$i]->getPrice()?></p>
+                    <p class="card-text"><?=$operator->getName()?></p>
+                    <a href="<?=  $operator->getLink()?>" class="btn btn-primary">Go somewhere</a>  
                 </div>
             </div>
         </div>
-        <?php endfor ;?>
+    <?php  }?>
     </div>

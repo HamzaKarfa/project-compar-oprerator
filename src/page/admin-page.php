@@ -11,16 +11,16 @@ $operatorTour = new Manager($db);
  <?php 
     if (isset($_POST['OperatorName']) && isset($_POST['OperatorLink']) ) {
 
-        if(!empty($_POST['OperatorPremium'])) {
-            $_POST['OperatorPremium'] = 0;
+        if(isset($_POST['OperatorPremium'])) {
         }
         else {
-            $_POST['OperatorPremium'] = 1;
+            $_POST['OperatorPremium'] = false;
         }
         $compagnie = new OperatorTour([  "name" => $_POST['OperatorName'], 
                                     "link"=>$_POST['OperatorLink'], 
                                     "grade"=>0 , 
                                     "isPremium" => $_POST['OperatorPremium']]);
+                                    var_dump($compagnie);
         $operatorTour->addOperatorTour($compagnie);
     }
 ?> 

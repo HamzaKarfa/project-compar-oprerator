@@ -83,11 +83,7 @@ class OperatorTour
 
   public function setIsPremium(bool $isPremium)
     {
-      if(is_string($isPremium))
-      {
         $this->isPremium = $isPremium;
-      }
-
     }
 
 
