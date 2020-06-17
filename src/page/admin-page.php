@@ -29,7 +29,7 @@ $operatorTour = new Manager($db);
         <h3>Ajouter une compagnie :</h3>
         <form action="" method="Post">
 
-            <input class="op1" type="text name="OperatorName" id="OperatorName" placeholder="Nom de l'operateur">
+            <input class="op1" type="text" name="OperatorName" id="OperatorName" placeholder="Nom de l'operateur">
             <br> 
             <input class="op2" type="url" name="OperatorLink" id="OperatorLink" placeholder="Lien vers l'operateur">
             <br>
@@ -42,12 +42,11 @@ $operatorTour = new Manager($db);
     </div>
 
     <!-- Card -->
-    <div class="container-cards">
+    <div class="container-cards row">
         <?php  for ($i=0; $i < $operatorTour->countOperator(); $i++){
             $operatorTourList = $operatorTour->getListOperatorTour();
-            
            ?>
-            <div class="card text-center " style="width: 20rem;">
+            <div class="card text-center" style="width: 20rem;">
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                 <div class="card-body" >
                     <h5 class="card-title"><?=$operatorTourList[$i]->getName()?></h5>

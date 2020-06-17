@@ -15,8 +15,4 @@ if (isset($_GET['admin'])) {
 }else{
     include "./src/page/home.php";
 }
-
-
-
-
 ?>

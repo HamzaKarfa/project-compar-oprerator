@@ -107,14 +107,15 @@ class Manager
     }
     else
     {
-        
-      $q = $this->db->prepare('SELECT  id, location, price, id_tour_operator FROM destinations WHERE location = :location');
+      $destinations =[];
+      $q = $this->db->prepare("SELECT * FROM destinations WHERE location = :location");
       $q->execute([':location' => $destinationInfo]);
-      $donnees = $q->fetch(PDO::FETCH_ASSOC);
+      $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
+      foreach ($donnees as $key ) {
+        array_push($destinations, new Destination($key)); 
+      }
+      return $destinations;
         
-        return new Destination($donnees); 
-
-
     }
   }
 

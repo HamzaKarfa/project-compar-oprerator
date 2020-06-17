@@ -22,11 +22,9 @@
         
         <h3>Ajouter une destination :</h3>
         <form action="" method="Post">
-            <label for="destinationName">Location : </label>
             <input type="text" name="destinationName" id="destinationName" placeholder="Nom de la destination"><br> 
-            <label for="destinationPrice">Prix : </label>
             <input type="number" name="destinationPrice" id="destinationPrice" placeholder="Prix de la destination"> <br>
-            <button type="submit">Ajouter</button>
+            <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
 
 
@@ -35,23 +33,27 @@
     <h3><?=$test->getName()?></h3>
 </div>
 
-<div class="destinations-cards">
+<div class="destinations-cards row">
     <?php  for ($i=0; $i <count($destination); $i++){?>
         <?php if ($destination[$i]->getIdTourOperator() == $test->getId()) {?>
-           <div class="card text-center" style="width: 20rem;">
-            <div class="col-12">
+           <div class="card text-center col-lg-3 m-2" style="width: 20rem;">
+            <form method="post">
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title"><?=$destination[$i]->getLocation()?></h5>
                     <p class="card-text"><?=$destination[$i]->getPrice()?>€</p>
                     <a href="<?= $test->getLink()?>" class="btn btn-primary">Go somewhere</a>  
+                    <input type="text" name="destinationId" value='<?=$destination[$i]->getId() ?>' style="display: none">
+                    <button type="submit" class="btn btn-danger">Supprimer</button>  
                 </div>
-            </div>
+        </form>
         </div> 
         
         
     <?php } }?>
- 
+<?php if (isset($_POST['destinationId'])) {
+    $operatorTour->deleteDestination($_POST['destinationId']);
+}?>
 </div>
 
 </div>

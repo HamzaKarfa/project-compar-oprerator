@@ -9,7 +9,7 @@ $operatorTour = new Manager($db);
         <p>Découvrez nos compagnies les plus populaires</p>
     </div>
 
-    <div class="container-cards">
+    <div class="container-cards ">
         <?php  for ($i=0; $i < $operatorTour->countOperator(); $i++){
             $operatorTourList = $operatorTour->getListOperatorTour();
             

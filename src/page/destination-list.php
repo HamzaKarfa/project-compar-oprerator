@@ -51,26 +51,42 @@
     </div>
 
     <div class="destinations-cards row">
-
-    <?php for ($i=0; $i <$destination->countDestination() ; $i++) { 
+    <?php $nameCard = [''];
+         for ($i=0; $i <$destination->countDestination() ; $i++) { 
     
         $destinations = $destination->getListDestination();
-        
-        $operator= $destination->getOperatorTour(intval($destinations[$i]->getIdTourOperator()))
-    ?>
- 
-        <div class="card text-center col-lg-3 m-2" style="width: 20rem;">
-            <div class="">
-                <h5 class="card-text"><?=$operator->getName()?></h5>
-                <hr>
-                <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title"><?=$destinations[$i]->getLocation()?></h5>
-                    <p class="card-text"><?=$destinations[$i]->getPrice()?>€</p>
-                    
-                    <a href="<?=  $operator->getLink()?>" class="btn btn-primary">Site web</a>  
+        $operator= $destination->getOperatorTour(intval($destinations[$i]->getIdTourOperator()));
+
+        foreach ($nameCard as $key) {
+            if ($key != $destinations[$i]->getLocation()) { ?>
+
+
+
+                <div class="card text-center col-lg-3 m-2" style="width: 20rem;">
+                    <div class="info">
+                        <h5 class="card-text"><?=$destinations[$i]->getLocation()?></h5>
+                        <hr>
+                        <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title"></h5>
+                            <!-- Button envoi detail destination -->
+                            <form action="" method="get">
+                                <button type="submit" class="btn btn-primary"name="detailDestination" value="<?=$destinations[$i]->getLocation()?>">Info Destination</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
+                
+
+
+        <?php 
+        array_shift($nameCard);
+        array_push($nameCard, $destinations[$i]->getLocation()); 
+        break;
+            }
+        }
+    ?>
+
     <?php  }?>
+
     </div>
