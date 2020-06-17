@@ -6,24 +6,17 @@
         <form action="" method="get">
 
             <input type="text" placeholder="Nom utilisateur">
-            <button type="submit">Connexion</button>
+            <button type="submit" class="btn btn-outline-primary">Connexion</button>
             <br>
-            <!-- <label for=""> Mot de passe</label>
-            <input type="password"> -->
         </form>
     </div>
     <div class="col-lg-4 text-center">
         <h4>Connexion Professionnel</h4>
         <hr>
         <form action="" method="get">
-
-            
             <input type="text" placeholder="Nom utilisateur" name="operatorTour">
-            <button type="submit">Connexion</button>
+            <button type="submit" class="btn btn-outline-primary">Connexion</button>
             <br>
-            <!-- <label for=""> Mot de passe</label>
-            <input type="password"> -->
-
         </form>
     </div>
     <div class="admin-link col-lg-4 p-4">

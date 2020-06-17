@@ -28,16 +28,17 @@ $operatorTour = new Manager($db);
         
         <h3>Ajouter une compagnie :</h3>
         <form action="" method="Post">
-            <label for="OperatorName">Nom : </label>
-            <input type="text" name="OperatorName" id="OperatorName" placeholder="Nom de l'operateur"><br> 
-            <label for="OperatorLink">Lien du site de l'opérateur : </label>
-            <input type="url" name="OperatorLink" id="OperatorLink" placeholder="Lien vers l'operateur"> <br>
-            <label for="OperatorLink">Premium : </label>
-            <input type="checkbox" name="OperatorPremium"  id="OperatorPremium"> <br>
-            <button type="submit">Ajouter</button>
+
+            <input class="op1" type="text name="OperatorName" id="OperatorName" placeholder="Nom de l'operateur">
+            <br> 
+            <input class="op2" type="url" name="OperatorLink" id="OperatorLink" placeholder="Lien vers l'operateur">
+            <br>
+            <h5>⭐ Premium</h5>
+            <input class="premium1" type="checkbox" name="OperatorPremium"  id="OperatorPremium">
+            <br>
+            <button type="submit" class="btn btn-outline-primary">Ajouter</button>
         </form>
-
-
+        
     </div>
 
     <!-- Card -->

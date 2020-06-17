@@ -1,81 +1,103 @@
 
 .img-home {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 .text-home {
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    margin: 50px 15px 15px 15px;
-    color: rgb(68, 68, 68);
-    font-family: 'Comfortaa', cursive;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 50px 15px 15px 15px;
+  color: rgb(68, 68, 68);
+  font-family: 'Comfortaa', cursive;
 }
 
 .text-home p {
-    max-width: 850px;
-    text-align: justify;
+  max-width: 850px;
+  text-align: justify;
 }
 
 .redirection {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
 }
 
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+}
 
-  /* Float four columns side by side */
+/* Float four columns side by side */
+.column {
+  width: 50%;
+  padding: 0 50px;
+  margin-top: 50px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 800px) {
   .column {
-    width: 50%;
-    padding: 0 50px;
-    margin-top: 50px;
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
   }
-  
-  /* Remove extra left and right margins, due to padding */
-  .row {margin: 0 -5px;}
-  
-  /* Clear floats after the columns */
-  .row:after {
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive columns */
-  @media screen and (max-width: 800px) {
-    .column {
-      width: 100%;
-      display: block;
-      margin-bottom: 20px;
-    }
-  }
-  
-  /* Style the counter cards */
-  .card {
-    box-shadow: 0 4px 10px 0 rgba(70, 70, 70, 0.534);
-    padding: 15px;
-    text-align: center;
-    background-color: rgba(202, 202, 202, 0.432);
-    font-family: 'Comfortaa', cursive;
-    transition: 0.5;
-  }
+}
 
-  .card:hover img {
-    transform: scale(1.1);
-    transition: 0.9s;
-  }
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 10px 0 rgba(70, 70, 70, 0.534);
+  padding: 15px;
+  text-align: center;
+  background-color: rgba(202, 202, 202, 0.432);
+  font-family: 'Comfortaa', cursive;
+  transition: 0.5;
+}
 
-  img {
-      border-radius: 5px;
-  }
+.card:hover img {
+  transform: scale(1.1);
+  transition: 0.9s;
+}
+
+img {
+    border-radius: 5px;
+}
 
 .carousel-home {
-  width: 100%;
-  margin-top: 50px;
-  background-color: rgba(187, 187, 187, 0.692);
-  display: flex;
-  justify-content: center;
+width: 100%;
+margin-top: 50px;
+background-color: rgba(187, 187, 187, 0.692);
+display: flex;
+justify-content: center;
+}
+
+
+/******************* page Connexion *******************/
+
+h4 {
+  color: rgb(68, 68, 68);
+  font-family: 'Comfortaa', cursive;
+}
+
+/******************* page Connexion *******************/
+
+h3, h5 {
+color: rgb(68, 68, 68);
+font-family: 'Comfortaa', cursive;
+padding: 15px;
+}
+
+.op1, .op2 {
+text-align: center;
+width: 300px;
+margin: 10px;
 }

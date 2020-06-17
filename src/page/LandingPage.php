@@ -27,14 +27,14 @@
 <div class="column">
 <div class="card">
 <p>Les voyages recomandés</p>
-<img src="asset/img/img-reco.jpg" alt="">
+<a href="?Destination="><img src="asset/img/img-reco.jpg" alt=""></a>
 </div>
 </div>
 
 <div class="column">
 <div class="card">
     <p>Nos destinations</p>
-    <img src="asset/img/img_dest.jpg" alt="">
+    <a href="?Destination="><img src="asset/img/img_dest.jpg" alt=""></a>
 </div>
 </div>
 
