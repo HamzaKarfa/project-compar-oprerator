@@ -5,7 +5,8 @@
     $operatorTour = new Manager($db);
      echo '<br>';
          $test  = $operatorTour->getOperatorTour($tourOperator); 
-         $destination = $operatorTour->getListDestination($test->getId());
+         $destination = $operatorTour->getListDestination();
+
 ?>
  <?php 
     if (isset($_POST['destinationName']) && isset($_POST['destinationPrice']) ) {
@@ -36,18 +37,20 @@
 
 <div class="destinations-cards">
     <?php  for ($i=0; $i <count($destination); $i++){?>
-
-        <div class="card text-center" style="width: 20rem;">
+        <?php if ($destination[$i]->getIdTourOperator() == $test->getId()) {?>
+           <div class="card text-center" style="width: 20rem;">
             <div class="col-12">
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title"><?=$destination[$i]->getLocation()?></h5>
                     <p class="card-text"><?=$destination[$i]->getPrice()?>€</p>
-                    <a href="" class="btn btn-primary">Go somewhere</a>  
+                    <a href="<?= $test->getLink()?>" class="btn btn-primary">Go somewhere</a>  
                 </div>
             </div>
-        </div>
-    <?php }?>
+        </div> 
+        
+        
+    <?php } }?>
  
 </div>
 

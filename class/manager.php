@@ -100,7 +100,7 @@ class Manager
     if (is_int($destinationInfo))
      
     {
-      $q = $this->db->query('SELECT * FROM destinations WHERE id = '.$destinationInfo.'GROUP BY id_tour_operator ');
+      $q = $this->db->query('SELECT * FROM destinations WHERE id_tour_operator = '.$destinationInfo);
       $donnees = $q->fetch(PDO::FETCH_ASSOC);
         return new Destination($donnees);
 
@@ -153,6 +153,24 @@ class Manager
 
 
   }
+  public function getListLocation()
+  //DESTINATION
+  {
+
+    $destinationList = [];
+
+    $q = $this->db->prepare('SELECT destinations.location FROM destinations INNER JOIN location ON location = location GROUP BY location');
+    $q->execute();
+    $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
+    for ($i=0; $i <count($donnees) ; $i++) { 
+        array_push ($destinationList, new Destination($donnees[$i]));
+    }
+    
+    return $destinationList;
+
+
+  }
+
 
 // --------------- UPDATE ------------------//
 

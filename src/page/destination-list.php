@@ -77,11 +77,13 @@
  
         <div class="card text-center" style="width: 20rem;">
             <div class="col-12">
+                <h5 class="card-text"><?=$operator->getName()?></h5>
+                <hr>
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title"><?=$destinations[$i]->getLocation()?></h5>
                     <p class="card-text"><?=$destinations[$i]->getPrice()?></p>
-                    <p class="card-text"><?=$operator->getName()?></p>
+                    
                     <a href="<?=  $operator->getLink()?>" class="btn btn-primary">Go somewhere</a>  
                 </div>
             </div>
