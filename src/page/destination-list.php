@@ -33,23 +33,6 @@
         </div>
     </div>
 
-    <div class="premium-cards row">
-
-    <?php  for ($i=0; $i <3; $i++):?>
-
-        <div class="card text-center col-lg-3 m-2" style="width: 20rem;">
-            <div class="">
-                <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">⭐ Premium</h5>
-                    <p class="card-text">Opperateur Premium</p>
-                    <a href="" class="btn btn-primary">Site web</a>  
-                </div>
-            </div>
-        </div>
-        <?php endfor ;?>
-    </div>
-
     <div class="destinations-cards row">
     <?php $nameCard = [''];
          for ($i=0; $i <$destination->countDestination() ; $i++) { 

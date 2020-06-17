@@ -77,15 +77,14 @@ class Manager
   {
     if (is_int($operatorTourInfo))
     {
-    $q = $this->db->query('SELECT id, name, grade, link, is_premium FROM tour_operators WHERE id = '.$operatorTourInfo);
+    $q = $this->db->query('SELECT * FROM tour_operators WHERE id = '.$operatorTourInfo);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
-
         return new OperatorTour($donnees);
   
     }
     else
     {
-    $q = $this->db->prepare('SELECT  id, name, grade, link, is_premium FROM tour_operators WHERE name = :name');
+    $q = $this->db->prepare('SELECT  * FROM tour_operators WHERE name = :name');
     $q->execute([':name' => $operatorTourInfo]);
     $donnees = $q->fetch(PDO::FETCH_ASSOC);
 

@@ -9,8 +9,8 @@ echo '<hr>';
                 if (gettype($value) !== 'array') {
                     echo ('<li style="margin-left: 2rem;color: teal; background-color: white">'
                         . '<span style="color : steelblue;font-weight : bold;">'
-                        . $key . '</span> : ');
-                        //. $value . '</li>');
+                        . $key . '</span> : '
+                        . $value . '</li>');
                 } else {
                     /* ignore same level recursion */
                     if ($nested_arrays !== $value) {

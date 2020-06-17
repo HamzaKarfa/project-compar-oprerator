@@ -9,12 +9,12 @@ $operatorTour = new Manager($db);
         <p>Découvrez nos compagnies les plus populaires</p>
     </div>
 
-    <div class="container-cards ">
+    <div class="container-cards row">
         <?php  for ($i=0; $i < $operatorTour->countOperator(); $i++){
             $operatorTourList = $operatorTour->getListOperatorTour();
             
            ?>
-            <div class="card text-center " style="width: 20rem;">
+            <div class="card text-center m-2 col-lg-3" style="width: 20rem;">
                 <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                 <div class="card-body" >
                     <h5 class="card-title"><?=$operatorTourList[$i]->getName()?></h5>
