@@ -210,4 +210,37 @@ class Manager
   {
     $this->db = $db;
   }
+
+
+
+//---------------------------- Review ----------------------//
+
+
+
+  public function getListReview()
+
+  {
+    $reviewList = [];
+    $q = $this->db->query('SELECT  * FROM reviews ORDER BY id DESC');
+    $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
+    for ($i=0; $i < count($donnees) ; $i++) { 
+      array_push ($reviewList, new Review($donnees[$i]));
+
+    }
+      return $reviewList;
+
+  }
+  public function addReview($review)
+
+  {
+    $q = $this->db->prepare('INSERT INTO reviews( message, author, id_tour_operator ) VALUES(:message , :author , :id_tour_operator)');
+    $q->bindValue(':message', $review->getMessage());
+    $q->bindValue(':author', $review->getAuthor());
+    $q->bindValue(':id_tour_operator', $review->getIdTourOperator());
+    $q->execute();
+    
+    $review->hydrate([
+      'id' => $this->db->lastInsertId(),
+    ]);
+  }
 }

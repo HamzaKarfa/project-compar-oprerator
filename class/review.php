@@ -4,7 +4,7 @@ class Review
 {
   protected $id,
             $message,
-            $price,
+            $author,
             $idtouroperator;
   
   public function __construct(array $donnees)
@@ -41,9 +41,9 @@ class Review
     {
       return $this->idtouroperator;
     }
-  public function getPrice()
+  public function getAuthor()
     {
-      return $this->price;
+      return $this->author;
     }  
   // SETTERS //
 
@@ -65,11 +65,11 @@ class Review
         $this->message = $message;
       }
     }
-  public function setPrice($price)
+  public function setAuthor($author)
     {
-        $this->price = $price;
+        $this->author = $author;
     }
-  public function setIdTourOperator($idtouroperator)
+  public function setId_tour_operator($idtouroperator)
     {
         $this->idtouroperator = $idtouroperator;
     }

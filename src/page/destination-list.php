@@ -36,15 +36,9 @@
     <div class="destinations-cards row">
     <?php $nameCard = [''];
          for ($i=0; $i <$destination->countDestination() ; $i++) { 
-    
         $destinations = $destination->getListDestination();
-        $operator= $destination->getOperatorTour(intval($destinations[$i]->getIdTourOperator()));
-
         foreach ($nameCard as $key) {
             if ($key != $destinations[$i]->getLocation()) { ?>
-
-
-
                 <div class="card text-center col-lg-3 m-2" style="width: 20rem;">
                     <div class="info">
                         <h5 class="card-text"><?=$destinations[$i]->getLocation()?></h5>
