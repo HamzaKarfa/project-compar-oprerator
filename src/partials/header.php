@@ -22,10 +22,10 @@
                     </li>
                     <li class="nav-item active">
                             <form method="GET" >
-                            <a class="nav-link" href="../../admin/index.php">
+                           
                                 <button class="btn btn-color" value="" name="connexion">Connexion</button>
                             </form> <span class="sr-only">(current)</span>
-                        </a>
+                        
                     </li>
                 </ul>
             </div>

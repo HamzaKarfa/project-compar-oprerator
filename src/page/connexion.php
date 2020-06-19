@@ -22,6 +22,17 @@
     </div> 
 </div>
 <hr>
+<div class="pub-connexion">
+    <h1>⭐ Devenez PREMIUM ⭐</h1>
+    <p>Devenez oppérateur Premium pour booster votre visibilité ainsi que vos ventes.
+        Un service aprés vente 24H/24 7 jours/7.
+        <br>
+        Une mise en avant de vos annonces en haut de page et dans nos sections recommandation avec un badge.
+    </p>
+    <br>
+    <button type="submit" class="btn btn-outline-primary">Devenir Premium</button>
+</div>
+<hr>
 <div class="container-admin row">
     <div class="admin-link p-4">
         <a class="btn btn-primary " href="?admin=1" role="button">Acces administrateur</a>

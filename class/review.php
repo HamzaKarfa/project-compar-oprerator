@@ -5,7 +5,8 @@ class Review
   protected $id,
             $message,
             $author,
-            $idtouroperator;
+            $idtouroperator,
+            $vote;
   
   public function __construct(array $donnees)
     {
@@ -45,6 +46,10 @@ class Review
     {
       return $this->author;
     }  
+  public function getVote()
+    {
+      return $this->vote;
+    }  
   // SETTERS //
 
   
@@ -72,5 +77,9 @@ class Review
   public function setId_tour_operator($idtouroperator)
     {
         $this->idtouroperator = $idtouroperator;
+    }
+  public function setVote($vote)
+    {
+        $this->vote = $vote;
     }
 }

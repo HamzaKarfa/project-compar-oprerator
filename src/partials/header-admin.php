@@ -1,7 +1,4 @@
-<picture>
-        <source media="(max-width: 1000px)" srcset="./asset/img/img-home1.jpg">
-        <img src="./asset/img/img-home.jpg">
-</picture>
+
     <div class="container-header">
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="./index.php">Home</a>

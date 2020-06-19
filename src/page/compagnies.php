@@ -6,8 +6,6 @@
     </div>
 
 
-         
-
     <div class="container-cards row ">
         <!-- Boucle pour les premium -->
         <?php  
@@ -20,41 +18,12 @@
 
                     <div class="card-body" >
                         <h5 class="card-title">⭐ <?=$operatorTourList[$i]->getName() ?></h5>
-                        <p class="card-text">Some quick example text to build.</p>
-
-                        <a href="<?=$operatorTourList[$i]->getLink()?>" class="btn btn-primary">Site web</a>  
-                        <form action="" method="post">
-                            <input type="text" name="delete" value="<?= $operatorTourList[$i]->getId() ?>"  style="display: none;">
-                        </form>
+                        <p class="card-text">Note moyenne de l'opérateur : <?=$operatorTourList[$i]->getGrade()?></p>
+                        <form action="" method="get">
+                            <input type="text" name="idOperator" value="<?= $operatorTourList[$i]->getId() ?>"  style="display: none;">
+                            <button type="submit"  class="btn btn-primary" >infos compagnie</button>
+                        </form> 
                         <br>
-                        <h5>Commentaire de l'opérateur</h5>
-                    </div>
-
-                    <!-- Commentaires -->                
-                    <div class="p-2" >
-                        <div class="review">
-                            <ul class="list-group list-group-flush overflow-auto" style="text-decoration: none; height: 140px; width:auto;">
-                                <?php $getReviews = $manager->getListReview() ;
-                                    for ($j=0; $j < count($getReviews); $j++) { 
-                                        if ($getReviews[$j]->getIdTourOperator() == $operatorTourList[$i]->getId()) { ?>
-                                            <li class="list-group-item list-group-item-secondary"><?= $getReviews[$j]->getAuthor()?></li>
-                                            <li class="list-group-item list-group-item-secondary"><?= $getReviews[$j]->getMessage()?></li>
-                                        <br>
-                                        <?php }
-                                    } ?>
-                            </ul>
-                            <br>
-                            <div class="card-footer" ><br>
-                                <p>Ajouter un commentaire</p>
-                                <form action="" method="post">
-                                    <input type="text" class="form-control" aria-label="Sizing example input" name="userName" placeholder="VotreNom" aria-describedby="inputGroup-sizing-sm">
-                                    <br>
-                                    <input class="form-control" aria-label="Sizing example input"  placeholder="Votre Message" aria-describedby="inputGroup-sizing-sm" name="message"><br>
-                                    <input type="text" name="nameOperator"  value="<?=$operatorTourList[$i]->getName()?>" style="display: none">
-                                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                                </form>  
-                            </div>
-                        </div>
                     </div>
                 </div>
            <?php } 
@@ -68,51 +37,14 @@
                     <img src="./asset/img/11404_800x480.jpg" class="card-img-top">
                     <div class="card-body" >
                         <h5 class="card-title"><?=$operatorTourList[$i]->getName()?></h5>
-                        <p class="card-text">Some quick example text to build.</p>
-                        <form action="" method="post">
-                            <input type="text" name="delete" value="<?= $operatorTourList[$i]->getId() ?>"  style="display: none;">
-                        </form>
+                        <p class="card-text">Note moyenne de l'opérateur : <?=$operatorTourList[$i]->getGrade()?></p>
+                        <form action="" method="get">
+                            <input type="text" name="idOperator" value="<?= $operatorTourList[$i]->getId() ?>"  style="display: none;">
+                            <button type="submit"  class="btn btn-primary" >infos compagnie</button>
+                        </form> 
                         <br>
-                        <h5>Commentaire de l'opérateur</h5>
-                    </div>
-                    <!-- Commentaires -->
-                    <div class="p-2" > 
-                        <div class="review">
-                            <ul class="list-group list-group-flush overflow-auto" style="text-decoration: none; height: 140px; width:auto;">
-                                <?php $getReviews = $manager->getListReview() ;
-                                for ($j=0; $j < count($getReviews); $j++) { 
-                                    if ($getReviews[$j]->getIdTourOperator() == $operatorTourList[$i]->getId()) {?>
-                                        <li class="list-group-item list-group-item-secondary"><?= $getReviews[$j]->getAuthor()?></li>
-                                        <li class="list-group-item list-group-item-secondary"><?=$getReviews[$j]->getMessage()?></li>
-                                    <br>
-                                    <?php }
-                                } ?>
-                            </ul>
-                            <br>
-                            <div class="card-footer" ><br>
-                                <p>Ajouter un commentaire</p>
-                                <form action="" method="post">
-                                    <input type="text" class="form-control" aria-label="Sizing example input" name="userName" placeholder="VotreNom" aria-describedby="inputGroup-sizing-sm">
-                                    <br>
-                                    <input class="form-control" aria-label="Sizing example input"  placeholder="Votre Message" aria-describedby="inputGroup-sizing-sm" name="message"><br>
-                                    <input type="text" name="nameOperator"  value="<?=$operatorTourList[$i]->getName()?>" style="display: none">
-                                    <button type="submit" class="btn btn-primary">Envoyer</button>
-                                </form>   
-                            </div>
-                        </div>
                     </div>
                 </div>
             <?php }
          } ?>
     </div>
-<?php
-    if (isset($_POST['userName']) && isset($_POST['message']) && isset($_POST['nameOperator'])) {
-        $idOperatorTour = $manager->getOperatorTour($_POST['nameOperator']);
-        $addReview = new Review([
-                "message" => $_POST['message'],
-                "author" => $_POST['userName'], 
-                "id_tour_operator"=> $idOperatorTour->getId() ]
-            );
-        $manager->addReview($addReview);
-    }
-?>

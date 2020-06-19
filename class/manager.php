@@ -234,14 +234,50 @@ class Manager
   public function addReview($review)
 
   {
-    $q = $this->db->prepare('INSERT INTO reviews( message, author, id_tour_operator ) VALUES(:message , :author , :id_tour_operator)');
+    $q = $this->db->prepare('INSERT INTO reviews( message, author, id_tour_operator, vote ) VALUES(:message , :author , :id_tour_operator, :vote)');
     $q->bindValue(':message', $review->getMessage());
     $q->bindValue(':author', $review->getAuthor());
     $q->bindValue(':id_tour_operator', $review->getIdTourOperator());
+    $q->bindValue(':vote', $review->getVote());
     $q->execute();
     
     $review->hydrate([
       'id' => $this->db->lastInsertId(),
     ]);
+  }
+  
+  public function updateGradeOperatorTour($operatorTour,$note)
+  //TOUR OPERATOR
+  {
+    $q = $this->db->prepare('UPDATE tour_operators SET grade = :grade WHERE id ='.$operatorTour);
+    
+    $q->bindValue(':grade', $note);
+    $q->execute();
+  }
+
+  public function getOperatorTourReview($operator)
+  //DESTINATION
+  {
+    if ($operator)
+     
+    {
+      $q = $this->db->query('SELECT vote FROM reviews WHERE id_tour_operator = '.$operator);
+      $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
+        return $donnees;
+
+    }
+  }
+  public function getReview($id)
+
+  {
+    $reviewList = [];
+    $q = $this->db->query('SELECT  * FROM reviews WHERE id_tour_operator ='.$id.' ORDER BY id DESC');
+    $donnees = $q->fetchAll(PDO::FETCH_ASSOC);
+    for ($i=0; $i < count($donnees) ; $i++) { 
+      array_push ($reviewList, new Review($donnees[$i]));
+
+    }
+      return $reviewList;
+
   }
 }
