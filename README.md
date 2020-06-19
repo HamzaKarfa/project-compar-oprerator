@@ -5,5 +5,5 @@ project en duo avec Yoan
 
 
 
-![desktop](./public/Wireframe1.png)
-![desktop](./public/Wireframe.png)
+(public/Wireframe1.png)
+(public/Wireframe.png)
