@@ -22,8 +22,8 @@
     </div> 
 </div>
 <hr>
-<div class="container-admin">
-    <div class="admin-link col-lg-1 p-4">
+<div class="container-admin row">
+    <div class="admin-link p-4">
         <a class="btn btn-primary " href="?admin=1" role="button">Acces administrateur</a>
     </div>
 </div>

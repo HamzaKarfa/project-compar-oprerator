@@ -1,14 +1,42 @@
-<div class="text-home">
-    <h1>
-        Trouvez votre coin de paradis avec
-        <br>
-        <br>
-        <img class="logo" src="./asset/img/logo.png">
-    </h1>
-</div>
-<div class="redirection">
-    <a class="btn btn-primary" href="?Destination=" role="button">Comparez tous les voyages</a>
-</div>
+
+    <div class="text-home">
+        <h1>
+            Trouvez votre coin de paradis avec
+            <br>
+            <br>
+            <img class="logo" src="./asset/img/logo.png">
+        </h1>
+    </div>
+
+    <div class="redirection">
+        <a href="?Destination="><button type="button" class="btn btn-primary btn-lg">Comparez tous les voyages</button></a>
+    </div>
+
+    <div class="row justify-content-center m-5">
+        <div class="col-lg-4 p-2">
+            <div class="card">
+                <p>Les voyages recomandés</p>
+                <a href="?Destination="><img src="asset/img/img-reco.jpg"></a>
+            </div>
+        </div>
+        
+        <div class="col-lg-4 p-2">
+            <div class="card">
+                <p>Nos destinations</p>
+                <a href="?Destination="><img src="asset/img/img_dest.jpg"></a>
+            </div>
+        </div>
+
+        <div class="col-lg-4 p-2">
+            <div class="card">
+                <p>Nos compagnies</p>
+                <a href="?Compagnies="><img src="asset/img/img-compagnies.jpg"></a>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
 <div class="carousel-home">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -37,20 +65,7 @@
         </a>
     </div>
 </div>
-<div class="row">
-    <div class="column">
-        <div class="card">
-            <p>Les voyages recomandés</p>
-            <a href="?Destination="><img src="asset/img/img-reco.jpg"></a>
-        </div>
-    </div>
-    <div class="column">
-        <div class="card">
-            <p>Nos destinations</p>
-            <a href="?Destination="><img src="asset/img/img_dest.jpg"></a>
-        </div>
-    </div>
-</div>
+
 <div class="text-home">
     <p>
         Rechercher un voyage prend souvent du temps. Trouver le site qui propose des voyages qui vous correspondent 

@@ -51,6 +51,10 @@ class Manager
   {
     return $this->db->query('SELECT COUNT(*) FROM tour_operators')->fetchColumn();
   }  
+  public function countOperatorPremium()
+  {
+    return $this->db->query('SELECT COUNT(*) FROM tour_operators WHERE is_premium = 1')->fetchColumn();
+  }  
   public function countDestination()
   //DESTINATION
   {
@@ -178,31 +182,28 @@ class Manager
   public function updateOperatorTour($operatorTour)
   //TOUR OPERATOR
   {
-    $q = $this->db->prepare('UPDATE tour_operators SET name = :name, grade = :grade, link = :link, is_premium = :is_premium WHERE id = :id');
+    $q = $this->db->prepare('UPDATE tour_operators SET name = :name, link = :link, is_premium = :is_premium WHERE id ='.$operatorTour->getId());
     
-
-    $q->bindValue(':name', $operatorTour->getName(), PDO::PARAM_INT);
-    $q->bindValue(':id', $operatorTour->getId(), PDO::PARAM_INT);
-    $q->bindValue(':grade', $operatorTour->getGrade(), PDO::PARAM_INT);
-    $q->bindValue(':link', $operatorTour->getLink(), PDO::PARAM_INT);
-    $q->bindValue(':is_premium', $operatorTour->getIsPremium(), PDO::PARAM_INT);
-
+    $q->bindValue(':name', $operatorTour->getName());
+    $q->bindValue(':link', $operatorTour->getLink());
+    $q->bindValue(':is_premium', $operatorTour->getIsPremium());
     $q->execute();
+    echo($operatorTour->getName().' A bien été modifié');
   }
   
 
   public function updateDestination($destination)
   //DESTINATION
   {
-    $q = $this->db->prepare('UPDATE destinations SET location = :location, price = :price, id_tour_operator = :id_tour_operator WHERE id = :id');
+    $q = $this->db->prepare('UPDATE destinations SET location = :location, price = :price, id_tour_operator = :id_tour_operator WHERE id = '.$destination->getId());
 
 
-    $q->bindValue(':location', $destination->getName(), PDO::PARAM_INT);
-    $q->bindValue(':id', $destination->getId(), PDO::PARAM_INT);
-    $q->bindValue(':price', $destination->getGrade(), PDO::PARAM_INT);
-    $q->bindValue(':id_tour_operator', $destination->getLink(), PDO::PARAM_INT);
+    $q->bindValue(':location', $destination->getLocation());
+    $q->bindValue(':price', $destination->getPrice(), PDO::PARAM_INT);
+    $q->bindValue(':id_tour_operator', $destination->getIdTourOperator(), PDO::PARAM_INT);
 
     $q->execute();
+    echo($destination->getLocation().' A bien été modifié');
   }
 
   //Setter DB

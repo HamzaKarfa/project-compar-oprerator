@@ -1,6 +1,6 @@
 .container-header {
     max-width: 100%;
-    height: 50px;
+    height: 80px;
     background-color: rgb(187, 187, 187);
     display: flex;
     justify-content: center;
@@ -10,17 +10,23 @@
 
 .navbar.navbar-expand-lg.navbar-light.bg-light {
     background-color: rgb(187, 187, 187);
+    padding: 5px;
+    border: solid blue 2px;
 }
-.show{
-   background-color:  rgba(0,0,0,0.3);
+.show {
+   background-color:  rgba(0, 0, 0, 0.74);
+   font-family: 'Comfortaa', cursive;
+   border-radius: 5px;
+
 }
 a.navbar-brand {
-    font-size: 18px;
+    font-size: 18px !important;
     text-decoration: none;
     font-weight: bold;
     font-family: 'Comfortaa', cursive;
-    color: white;
+    color: white !important;
     text-shadow: rgba(107, 107, 107, 0.514) 1px 0 10px;
+    margin: 0 40px 0 40px;
 }
 
 a.nav-link {
@@ -29,11 +35,12 @@ a.nav-link {
 }
 
 button.btn.btn-color {
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
     font-family: 'Comfortaa', cursive;
     color: white;
     text-shadow: rgba(107, 107, 107, 0.514) 1px 0 10px;
+    
 }
 
 .nav-item.active {
